@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Directory Security Operations | CyberEdu Pro</title>
+    <meta name="description" content="Master Active Directory attack and defense with live demos, purple team drills, and repeatable lab scenarios.">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-utility" aria-label="Global resources">
+            <div class="container">
+                <div class="utility-left">
+                    <span class="utility-item">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                        24/7 Mentor Support
+                    </span>
+                    <span class="utility-item">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                        Next cohort starts Nov 3</span>
+                </div>
+                <div class="utility-right">
+                    <a class="utility-link" href="../status.html">
+                        <i class="fas fa-signal" aria-hidden="true"></i>
+                        Platform Status
+                    </a>
+                    <a class="utility-link" href="../help.html">
+                        <i class="fas fa-circle-question" aria-hidden="true"></i>
+                        Help Center
+                    </a>
+                    <div class="utility-social" aria-label="Community channels">
+                        <a href="#" aria-label="Join our Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="CyberEdu Pro on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="CyberEdu Pro on YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="announcement-bar" role="status">
+            <div class="container">
+                <div class="announcement-content">
+                    <span class="badge badge-live">Live Lab</span>
+                    <p>New Kerberos lab chain simulates real-world domain compromise from phishing to persistence.</p>
+                </div>
+                <a href="../labs.html#active-directory" class="btn btn-outline-light btn-sm">Join live lab</a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    CyberEdu<span class="text-primary">Pro</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
+                                Courses
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
+                                <li><a class="dropdown-item" href="linux-fundamental.html">Linux Fundamentals</a></li>
+                                <li><a class="dropdown-item" href="windows-fundamental.html">Windows Fundamentals</a></li>
+                                <li><a class="dropdown-item" href="ceh.html">Certified Ethical Hacker (CEH)</a></li>
+                                <li><a class="dropdown-item" href="ejpt.html">eJPT Prep</a></li>
+                                <li><a class="dropdown-item active" href="active-directory.html">Active Directory Security</a></li>
+                                <li><a class="dropdown-item" href="ccna.html">CCNA Cyber Ops</a></li>
+                                <li><a class="dropdown-item" href="cpts.html">INE CPTS</a></li>
+                                <li><a class="dropdown-item" href="crto.html">CRTO Red Team Ops</a></li>
+                                <li><a class="dropdown-item" href="cloud-security.html">Cloud Security</a></li>
+                                <li><a class="dropdown-item" href="devops-security.html">DevOps Security</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../courses.html">Browse Catalog</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../learning-paths.html">Learning Paths</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../labs.html">Practice Labs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../certifications.html">Certifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../community.html">Community</a></li>
+                    </ul>
+                    <div class="nav-right">
+                        <button class="btn btn-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-expanded="false" aria-controls="navbarSearch">
+                            <span class="visually-hidden">Toggle course search</span>
+                            <i class="fas fa-magnifying-glass"></i>
+                        </button>
+                        <a href="../courses.html" class="btn btn-outline-light">Course Catalog</a>
+                        <a href="../community.html" class="btn btn-primary">Join Community</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="navbar-search collapse" id="navbarSearch">
+            <div class="container">
+                <form class="search-form" role="search" aria-label="Search courses">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-magnifying-glass"></i></span>
+                        <input type="search" class="form-control" placeholder="Search courses, certifications, or labs" aria-label="Search query">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                    <p class="search-hint">Popular: Kerberoasting | BloodHound | Purple Team</p>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="course-hero">
+            <div class="container">
+                <span class="badge"><i class="fas fa-shield-halved"></i> Hybrid Training</span>
+                <h1 class="course-title">Active Directory Security Operations</h1>
+                <p class="course-summary">Stream blue/red team drills that deconstruct Active Directory attacks, remediations, and detection engineering in a bingeable Netflix-style format.</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 20 hours on-demand video</span>
+                    <span><i class="fas fa-layer-group"></i> 9 modules • 72 lessons</span>
+                    <span><i class="fas fa-flask"></i> 12 detection labs</span>
+                    <span><i class="fas fa-wifi"></i> Includes live domain lab</span>
+                </div>
+                <div class="course-tags">
+                    <span class="course-tag">Active Directory</span>
+                    <span class="course-tag">Blue Team</span>
+                    <span class="course-tag">Kerberos</span>
+                    <span class="course-tag">BloodHound</span>
+                </div>
+                <div class="course-cta">
+                    <a href="#player" class="btn btn-primary btn-lg"><i class="fas fa-play me-2"></i>Watch first mission</a>
+                    <a href="../labs.html#active-directory" class="btn btn-outline-light btn-lg"><i class="fas fa-flask me-2"></i>Launch lab domain</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-main" id="player">
+            <div class="container">
+                <div class="course-layout">
+                    <div class="course-player">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/iVpwkrPwNJA?rel=0&modestbranding=1&playsinline=1" title="Active Directory Security Preview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" data-course-video></iframe>
+                        </div>
+                        <div class="current-lesson" role="status" aria-live="polite">
+                            <span class="current-lesson-label">Now streaming</span>
+                            <div class="current-lesson-heading">
+                                <span class="current-lesson-index">01</span>
+                                <p class="current-lesson-title">Introduction</p>
+                            </div>
+                        </div>
+                        <div class="player-actions">
+                            <div class="player-meta">
+                                <span><i class="fas fa-calendar"></i> Updated Oct 2025</span>
+                                <span><i class="fas fa-language"></i> English audio • EN/DE captions</span>
+                            </div>
+                            <div class="player-buttons">
+                                <a class="btn btn-outline-light btn-sm" href="#resources"><i class="fas fa-diagram-project me-2"></i>Download lab topology</a>
+                                <a class="btn btn-primary btn-sm" href="../community.html"><i class="fas fa-comments me-2"></i>Discuss with Peers</a>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="playlist-panel" aria-label="Course playlist">
+                        <div class="playlist-header">
+                            <h2>Episode Guide</h2>
+                            <span class="text-muted"><i class="fas fa-clock me-2"></i>22-part mission arc</span>
+                        </div>
+                        <div class="lesson-list" role="list">
+                            <button class="lesson-item active" role="listitem" data-video="https://www.youtube.com/embed/iVpwkrPwNJA" data-video-title="Introduction" data-lesson-index="01">
+                                <span class="lesson-index">01</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Introduction</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>9m 24s</span>
+                                        <span>Course orientation</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/kHogyXL705o" data-video-title="Introduction to Active Directory" data-lesson-index="02">
+                                <span class="lesson-index">02</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Active Directory</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>7m 32s</span>
+                                        <span>Directory fundamentals</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/fWv6IxFMCb4" data-video-title="PowerShell" data-lesson-index="03">
+                                <span class="lesson-index">03</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">PowerShell</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>24m 41s</span>
+                                        <span>Automation primer</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/39xmJFLDzts" data-video-title="Methodology" data-lesson-index="04">
+                                <span class="lesson-index">04</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Methodology</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>6m 50s</span>
+                                        <span>Kill chain flow</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/H5lhy4_ItyI" data-video-title="Access The Lab" data-lesson-index="05">
+                                <span class="lesson-index">05</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Access The Lab</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>14m 47s</span>
+                                        <span>Environment setup</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/A8GJpKSTFfQ" data-video-title="Domain Enumeration" data-lesson-index="06">
+                                <span class="lesson-index">06</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Domain Enumeration</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>50m 57s</span>
+                                        <span>Mapping techniques</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/gFg8ZTNfyRo" data-video-title="Domain Enumeration ACLs" data-lesson-index="07">
+                                <span class="lesson-index">07</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Domain Enumeration ACLs</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>23m 59s</span>
+                                        <span>Privilege analysis</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/lcXqTrtk1tY" data-video-title="Domain Enumeration Trusts" data-lesson-index="08">
+                                <span class="lesson-index">08</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Domain Enumeration Trusts</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>23m 26s</span>
+                                        <span>Forest relationships</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/gKDCUfPpagg" data-video-title="Domain Enumeration User Hunting" data-lesson-index="09">
+                                <span class="lesson-index">09</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Domain Enumeration User Hunting</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>15m 47s</span>
+                                        <span>Target discovery</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/xrxp-mHmlV0" data-video-title="Privilege Escalation" data-lesson-index="10">
+                                <span class="lesson-index">10</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Privilege Escalation</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>18m 52s</span>
+                                        <span>Admin pathways</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/GngWVusa2i4" data-video-title="Feature Abuse" data-lesson-index="11">
+                                <span class="lesson-index">11</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Feature Abuse</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>9m 35s</span>
+                                        <span>Living-off-the-land features</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/dvo82zNRGzI" data-video-title="Learning Objective 5" data-lesson-index="12">
+                                <span class="lesson-index">12</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Learning Objective 5</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>18m 18s</span>
+                                        <span>Operational checkpoints</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/0MJAf66-cfY" data-video-title="Domain Enumeration BloodHound" data-lesson-index="13">
+                                <span class="lesson-index">13</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Domain Enumeration BloodHound</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>10m 24s</span>
+                                        <span>Graph analytics workflow</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/KDR5LX2JfB8" data-video-title="Lateral Movement PowerShell Remoting" data-lesson-index="14">
+                                <span class="lesson-index">14</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Lateral Movement PowerShell Remoting</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>14m 13s</span>
+                                        <span>PS Remoting techniques</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/BFqhEcStbts" data-video-title="Lateral Movement" data-lesson-index="15">
+                                <span class="lesson-index">15</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Lateral Movement</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>21m 35s</span>
+                                        <span>Credential propagation drills</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/7-yoMsF2gLM" data-video-title="Offensive NET" data-lesson-index="16">
+                                <span class="lesson-index">16</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Offensive NET</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>15m 34s</span>
+                                        <span>.NET operator tooling</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/mu6prG72iJs" data-video-title="Learning Objective 7" data-lesson-index="17">
+                                <span class="lesson-index">17</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Learning Objective 7</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>48m 11s</span>
+                                        <span>Blue team assurances</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/m0vjkPHaukU" data-video-title="Kerberos" data-lesson-index="18">
+                                <span class="lesson-index">18</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Kerberos</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>11m 53s</span>
+                                        <span>Protocol fundamentals</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/fm7FYg8EinM" data-video-title="About Kerberos" data-lesson-index="19">
+                                <span class="lesson-index">19</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">About Kerberos</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>6m 11s</span>
+                                        <span>Ticket lifecycle</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/YlD8XFZ4MrU" data-video-title="Golden Ticket" data-lesson-index="20">
+                                <span class="lesson-index">20</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Golden Ticket</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>39m 23s</span>
+                                        <span>Forged TGT attack path</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/ULwrFFyhIqo" data-video-title="Silver Ticket" data-lesson-index="21">
+                                <span class="lesson-index">21</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Silver Ticket</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>9m 07s</span>
+                                        <span>Service ticket persistence</span>
+                                    </div>
+                                </div>
+                            </button>
+                            <button class="lesson-item" role="listitem" data-video="https://www.youtube.com/embed/unEgLnjH-i8" data-video-title="Diamond Ticket" data-lesson-index="22">
+                                <span class="lesson-index">22</span>
+                                <div class="lesson-body">
+                                    <p class="lesson-title">Diamond Ticket</p>
+                                    <div class="lesson-meta">
+                                        <span><i class="fas fa-video me-1"></i>12m 51s</span>
+                                        <span>Hybrid ticket forging</span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Operate across the kill chain</h2>
+                    <p>Gain offensive intuition and defensive muscle memory for one of the most targeted enterprise systems.</p>
+                </div>
+                <div class="learning-objectives">
+                    <div class="objective-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>AD mapping</h3>
+                        <p>Enumerate domains, forests, and trust relationships with automation and visualization.</p>
+                    </div>
+                    <div class="objective-card">
+                        <i class="fas fa-key"></i>
+                        <h3>Ticket abuse</h3>
+                        <p>Exploit Kerberos misconfigurations, forge tickets, and detect anomalies in telemetry.</p>
+                    </div>
+                    <div class="objective-card">
+                        <i class="fas fa-shield"></i>
+                        <h3>Defensive engineering</h3>
+                        <p>Deploy group policies, monitoring baselines, and detection analytics that stand up to adversaries.</p>
+                    </div>
+                    <div class="objective-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>Incident response</h3>
+                        <p>Practice coordinated response with playbooks and post-incident reporting deliverables.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Mission chapters</h2>
+                    <p>Each chapter mirrors real-world campaigns with synchronized red and blue team perspectives.</p>
+                </div>
+                <div class="course-chapters">
+                    <article class="chapter-card">
+                        <header>
+                            <h3>Recon & exposure analysis</h3>
+                            <span class="chapter-meta"><i class="fas fa-clock me-1"></i>1h 20m • 7 lessons</span>
+                        </header>
+                        <p>Learn to map high-value targets, service accounts, and policy gaps.</p>
+                        <ul>
+                            <li>BloodHound data model</li>
+                            <li>Group policy analytics</li>
+                            <li>Attack path reduction</li>
+                        </ul>
+                    </article>
+                    <article class="chapter-card">
+                        <header>
+                            <h3>Credential compromises</h3>
+                            <span class="chapter-meta"><i class="fas fa-clock me-1"></i>1h 35m • 8 lessons</span>
+                        </header>
+                        <p>Reproduce Kerberoasting, AS-REP Roasting, pass-the-hash, and credential relay attacks.</p>
+                        <ul>
+                            <li>Responder & NTLM relay lab</li>
+                            <li>Detecting golden ticket activity</li>
+                            <li>Credential hygiene strategy</li>
+                        </ul>
+                    </article>
+                    <article class="chapter-card">
+                        <header>
+                            <h3>Defense & recovery</h3>
+                            <span class="chapter-meta"><i class="fas fa-clock me-1"></i>1h 50m • 9 lessons</span>
+                        </header>
+                        <p>Apply hardening, logging, and response tactics to secure and restore AD operations.</p>
+                        <ul>
+                            <li>SIEM correlation packs</li>
+                            <li>Just-in-time admin rollout</li>
+                            <li>Post-incident review workshop</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section" id="resources">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Resources & downloads</h2>
+                    <p>Actionable guides for both offensive operators and defenders.</p>
+                </div>
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h3>Notes</h3>
+                        <p>Mission briefs, checklists, and recap sheets to reinforce every lesson at a glance.</p>
+                        <a class="btn btn-outline-light btn-sm" href="#"><i class="fas fa-note-sticky me-2"></i>Download notes</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Tools</h3>
+                        <p>Operator utilities, BloodHound exports, and scripts featured throughout the missions.</p>
+                        <a class="btn btn-outline-light btn-sm" href="#"><i class="fas fa-toolbox me-2"></i>Get tools</a>
+                    </div>
+                    <div class="resource-card">
+                        <h3>Labs</h3>
+                        <p>Hands-on lab guides and walkthrough videos to replicate each attack chain end-to-end.</p>
+                        <a class="btn btn-outline-light btn-sm" href="#"><i class="fas fa-flask me-2"></i>Start labs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Your mentors</h2>
+                    <p>Co-taught by red and blue team leads who collaborate on purple exercises.</p>
+                </div>
+                <div class="course-instructor">
+                    <img src="../assets/img/instructor-placeholder.svg" alt="Instructor portrait for Active Directory course">
+                    <div>
+                        <h3>Jordan Vega & Priya Anand</h3>
+                        <p class="text-muted">Red Team Lead & SOC Manager @ SentinelWorks</p>
+                        <p>Jordan executes full-scope AD breach simulations while Priya designs detections, bringing a cohesive narrative to every mission.</p>
+                        <div class="course-tags">
+                            <span class="course-tag">CRTO</span>
+                            <span class="course-tag">GCWN</span>
+                            <span class="course-tag">SIEM Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="course-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Keep growing</h2>
+                    <p>Build on your Active Directory mastery with these related tracks.</p>
+                </div>
+                <div class="recommended-track">
+                    <article class="recommended-card">
+                        <h3>CRTO Red Team Ops</h3>
+                        <p>Master operator tooling with enterprise-focused adversary emulation.</p>
+                        <a class="btn btn-outline-light btn-sm" href="crto.html">Explore course</a>
+                    </article>
+                    <article class="recommended-card">
+                        <h3>Cloud Security</h3>
+                        <p>Extend identity and access protections across hybrid and cloud environments.</p>
+                        <a class="btn btn-outline-light btn-sm" href="cloud-security.html">Explore course</a>
+                    </article>
+                    <article class="recommended-card">
+                        <h3>DevOps Security</h3>
+                        <p>Integrate secure configuration and policy enforcement into your pipelines.</p>
+                        <a class="btn btn-outline-light btn-sm" href="devops-security.html">Explore course</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3>About CyberEdu Pro</h3>
+                    <p>Professional cybersecurity training platform dedicated to providing high-quality education and practical experience.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../courses.html">Courses</a></li>
+                        <li><a href="../learning-paths.html">Learning Paths</a></li>
+                        <li><a href="../labs.html">Practice Labs</a></li>
+                        <li><a href="../certifications.html">Certifications</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="../help.html">Help Center</a></li>
+                        <li><a href="../faq.html">FAQs</a></li>
+                        <li><a href="../status.html">Platform Status</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                        <li><a href="../terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates about new courses and cybersecurity news.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CyberEdu Pro. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Fundamentals | CyberEdu Pro</title>
+    <meta name="description" content="Master core Linux concepts, shell navigation, permissions, and automation in this hands-on fundamentals course.">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-utility" aria-label="Global resources">
+            <div class="container">
+                <div class="utility-left">
+                    <span class="utility-item">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                        24/7 Mentor Support
+                    </span>
+                    <span class="utility-item">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                        Next cohort starts Oct 15
+                    </span>
+                </div>
+                <div class="utility-right">
+                    <a class="utility-link" href="../status.html">
+                        <i class="fas fa-signal" aria-hidden="true"></i>
+                        Platform Status
+                    </a>
+                    <a class="utility-link" href="../help.html">
+                        <i class="fas fa-circle-question" aria-hidden="true"></i>
+                        Help Center
+                    </a>
+                    <div class="utility-social" aria-label="Community channels">
+                        <a href="#" aria-label="Join our Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="CyberEdu Pro on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="CyberEdu Pro on YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="announcement-bar" role="status">
+            <div class="container">
+                <div class="announcement-content">
+                    <span class="badge badge-live">Exam Update</span>
+                    <p>New SOC automation module added with Cisco SecureX and Splunk correlation packs.</p>
+                </div>
+                <a href="../certifications.html#ccna" class="btn btn-outline-light btn-sm">View certification guide</a>
+            </div>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    CyberEdu<span class="text-primary">Pro</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page">
+                                Courses
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
+                                <li><a class="dropdown-item active" href="linux-fundamental.html">Linux Fundamentals</a></li>
+                                <li><a class="dropdown-item" href="windows-fundamental.html">Windows Fundamentals</a></li>
+                                <li><a class="dropdown-item" href="ceh.html">Certified Ethical Hacker (CEH)</a></li>
+                                <li><a class="dropdown-item" href="ejpt.html">eJPT Prep</a></li>
+                                <li><a class="dropdown-item" href="active-directory.html">Active Directory Security</a></li>
+                                <li><a class="dropdown-item" href="ccna.html">CCNA Cyber Ops</a></li>
+                                <li><a class="dropdown-item" href="cpts.html">INE CPTS</a></li>
+                                <li><a class="dropdown-item" href="crto.html">CRTO Red Team Ops</a></li>
+                                <li><a class="dropdown-item" href="cloud-security.html">Cloud Security</a></li>
+                                <li><a class="dropdown-item" href="devops-security.html">DevOps Security</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../courses.html">Browse Catalog</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../learning-paths.html">Learning Paths</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../labs.html">Practice Labs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../certifications.html">Certifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../community.html">Community</a></li>
+                    </ul>
+                    <div class="nav-right">
+                        <button class="btn btn-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-expanded="false" aria-controls="navbarSearch">
+                            <span class="visually-hidden">Toggle course search</span>
+                            <i class="fas fa-magnifying-glass"></i>
+                        </button>
+                        <a href="../courses.html" class="btn btn-outline-light">Course Catalog</a>
+                        <a href="../community.html" class="btn btn-primary">Join Community</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="navbar-search collapse" id="navbarSearch">
+            <div class="container">
+                <form class="search-form" role="search" aria-label="Search courses">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-magnifying-glass"></i></span>
+                        <input type="search" class="form-control" placeholder="Search courses, certifications, or labs" aria-label="Search query">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                    <p class="search-hint">Popular: SOC Analyst | Packet Analysis | Cisco Secure</p>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="course-hero coming-soon">
+            <div class="container">
+                <span class="badge"><i class="fas fa-hourglass-half"></i> Coming Soon</span>
+                <h1 class="course-title">Linux Fundamentals</h1>
+                <p class="course-summary">We're rebuilding the Linux Fundamentals labs with new automation missions and threat-hunting drills. Jump into our Active Directory track or join the community to get notified the moment it relaunches.</p>
+                <div class="course-cta">
+                    <a href="../courses.html" class="btn btn-outline-light btn-lg"><i class="fas fa-layer-group me-2"></i>Browse all courses</a>
+                    <a href="../community.html" class="btn btn-primary btn-lg"><i class="fas fa-bell me-2"></i>Get notified</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3>About CyberEdu Pro</h3>
+                    <p>Professional cybersecurity training platform dedicated to providing high-quality education and practical experience.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../courses.html">Courses</a></li>
+                        <li><a href="../learning-paths.html">Learning Paths</a></li>
+                        <li><a href="../labs.html">Practice Labs</a></li>
+                        <li><a href="../certifications.html">Certifications</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="../help.html">Help Center</a></li>
+                        <li><a href="../faq.html">FAQs</a></li>
+                        <li><a href="../status.html">Platform Status</a></li>
+                        <li><a href="../contact.html">Contact Us</a></li>
+                        <li><a href="../terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates about new courses and cybersecurity news.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CyberEdu Pro. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

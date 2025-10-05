@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Updates | CyberEdu Pro</title>
+    <meta name="description" content="Sign up for CyberEdu Pro release updates—courses are already open access.">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card registration-card">
+            <a href="index.html" class="logo d-inline-flex align-items-center gap-2 mb-4 text-decoration-none text-light">
+                <span class="fw-bold">CyberEdu<span class="text-primary">Pro</span></span>
+            </a>
+
+            <div class="registration-grid">
+                <div class="registration-content">
+                    <span class="badge badge-soft mb-3"><i class="fas fa-satellite-dish me-2"></i>Community release</span>
+                    <h1 class="page-title">Join the CyberEdu Pro mission roster</h1>
+                    <p class="page-description">Level up your security career with open-access courses, labs, and live-fire missions. Save your spot to be first in line for new cohorts, certifications, and red/blue team drills.</p>
+
+                    <div class="registration-highlights">
+                        <div class="highlight-card">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            <div>
+                                <h2>All-access catalog</h2>
+                                <p>Stream every course, lab guide, and playbook without paywalls or time limits.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-card">
+                            <i class="fas fa-shield-check" aria-hidden="true"></i>
+                            <div>
+                                <h2>Credential paths</h2>
+                                <p>Track your progress toward industry certifications with curated learning paths.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-card">
+                            <i class="fas fa-person-chalkboard" aria-hidden="true"></i>
+                            <div>
+                                <h2>Mentor support</h2>
+                                <p>Drop questions in the community and join upcoming office hours with our instructors.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="registration-metrics">
+                        <div>
+                            <span class="metric-value">18k+</span>
+                            <span class="metric-label">Members training worldwide</span>
+                        </div>
+                        <div>
+                            <span class="metric-value">42</span>
+                            <span class="metric-label">Labs with guided walkthroughs</span>
+                        </div>
+                        <div>
+                            <span class="metric-value">5</span>
+                            <span class="metric-label">New missions dropping next</span>
+                        </div>
+                    </div>
+
+                    <div class="registration-links">
+                        <a href="courses.html" class="btn btn-outline-light btn-lg"><i class="fas fa-layer-group me-2"></i>Browse courses</a>
+                        <a href="labs.html" class="btn btn-primary btn-lg"><i class="fas fa-flask me-2"></i>Launch a lab</a>
+                    </div>
+
+                    <div class="registration-note">
+                        <p class="small text-muted mb-1"><i class="fas fa-lock me-2"></i>Your details stay private. Unsubscribe anytime in one click.</p>
+                        <p class="small text-muted mb-0">Already onboard? <a href="login.html" class="text-primary text-decoration-none">Sign in here</a>.</p>
+                    </div>
+                </div>
+
+                <div class="registration-form">
+                    <div class="form-shell">
+                        <div class="form-header">
+                            <h2>Reserve your spot</h2>
+                            <p>Tell us where to send new mission briefings, beta invites, and certification drops.</p>
+                        </div>
+                        <form class="auth-form" data-open-access-updates>
+                            <div class="form-group">
+                                <label for="updates-name" class="form-label">Full name</label>
+                                <input type="text" id="updates-name" name="name" class="form-control" placeholder="Ada Lovelace" autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="updates-email" class="form-label">Email address</label>
+                                <input type="email" id="updates-email" name="email" class="form-control" placeholder="you@example.com" required autocomplete="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="focus-area" class="form-label">Primary focus</label>
+                                <select id="focus-area" name="focus" class="form-control">
+                                    <option value="">Choose a track</option>
+                                    <option value="red-team">Red Team / Adversary Ops</option>
+                                    <option value="blue-team">Blue Team / SOC</option>
+                                    <option value="cloud">Cloud &amp; DevSecOps</option>
+                                    <option value="leadership">Leadership &amp; Strategy</option>
+                                    <option value="governance">Governance, Risk &amp; Compliance</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="experience" class="form-label">Experience level</label>
+                                <div class="experience-options">
+                                    <label class="experience-option">
+                                        <input type="radio" name="experience" value="starter">
+                                        <span>New to cyber</span>
+                                    </label>
+                                    <label class="experience-option">
+                                        <input type="radio" name="experience" value="practitioner">
+                                        <span>Practicing analyst</span>
+                                    </label>
+                                    <label class="experience-option">
+                                        <input type="radio" name="experience" value="leader">
+                                        <span>Team lead / manager</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="goal" class="form-label">What are you aiming to tackle next?</label>
+                                <textarea id="goal" name="goal" class="form-control" rows="3" placeholder="Example: Prep for CCNA Cyber Ops and sharpen threat hunting playbooks."></textarea>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" id="cohort-alerts" name="cohort_alerts" class="form-check-input" checked>
+                                <label for="cohort-alerts" class="form-check-label">Keep me looped in on live cohorts and instructor office hours.</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Send me mission updates</button>
+                        </form>
+                        <p class="form-disclaimer small text-muted mt-3 mb-0">We respect your inbox. Expect 1&ndash;2 updates per month, always with instant opt-out links.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="registration-footer">
+                <div class="trusted-by">
+                    <span class="text-muted small">Trusted by defenders from</span>
+                    <div class="trusted-logos">
+                        <span>SentinelWorks</span>
+                        <span>BlueShift SOC</span>
+                        <span>SkyShield Cloud</span>
+                        <span>ForgeSec Ops</span>
+                    </div>
+                </div>
+                <div class="support-links">
+                    <a href="help.html" class="text-muted small text-decoration-none">Need help? Visit the Help Center</a>
+                    <span class="divider-dot" aria-hidden="true">•</span>
+                    <a href="community.html" class="text-muted small text-decoration-none">Join the community</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

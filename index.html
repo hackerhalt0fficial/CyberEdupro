@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberEdu Pro - Cybersecurity Training & Certification</title>
+    <meta name="description" content="Professional cybersecurity training platform offering comprehensive courses, certifications, and hands-on labs.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-utility" aria-label="Global resources">
+            <div class="container">
+                <div class="utility-left">
+                    <span class="utility-item">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                        24/7 Mentor Support
+                    </span>
+                    <span class="utility-item">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                        Next cohort starts Oct 15
+                    </span>
+                </div>
+                <div class="utility-right">
+                    <a class="utility-link" href="status.html">
+                        <i class="fas fa-signal" aria-hidden="true"></i>
+                        Platform Status
+                    </a>
+                    <a class="utility-link" href="help.html">
+                        <i class="fas fa-circle-question" aria-hidden="true"></i>
+                        Help Center
+                    </a>
+                    <div class="utility-social" aria-label="Community channels">
+                        <a href="#" aria-label="Join our Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="CyberEdu Pro on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="CyberEdu Pro on YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="announcement-bar" role="status">
+            <div class="container">
+                <div class="announcement-content">
+                    <span class="badge badge-live">Live</span>
+                    <p>New Offensive Security Career Accelerator now enrolling &mdash; limited seats available.</p>
+                </div>
+                <a href="learning-paths.html#red-team" class="btn btn-outline-light btn-sm">Reserve My Seat</a>
+            </div>
+        </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    CyberEdu<span class="text-primary">Pro</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Courses
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
+                                <li><a class="dropdown-item" href="courses/linux-fundamental.html">Linux Fundamentals</a></li>
+                                <li><a class="dropdown-item" href="courses/windows-fundamental.html">Windows Fundamentals</a></li>
+                                <li><a class="dropdown-item" href="courses/ceh.html">Certified Ethical Hacker (CEH)</a></li>
+                                <li><a class="dropdown-item" href="courses/ejpt.html">eJPT Prep</a></li>
+                                <li><a class="dropdown-item" href="courses/active-directory.html">Active Directory Security</a></li>
+                                <li><a class="dropdown-item" href="courses/ccna.html">CCNA Cyber Ops</a></li>
+                                <li><a class="dropdown-item" href="courses/cpts.html">INE CPTS</a></li>
+                                <li><a class="dropdown-item" href="courses/crto.html">CRTO Red Team Ops</a></li>
+                                <li><a class="dropdown-item" href="courses/cloud-security.html">Cloud Security</a></li>
+                                <li><a class="dropdown-item" href="courses/devops-security.html">DevOps Security</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="courses.html">Browse Catalog</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="learning-paths.html">Learning Paths</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="labs.html">Practice Labs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="certifications.html">Certifications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="community.html">Community</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="nav-right">
+                        <button class="btn btn-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-expanded="false" aria-controls="navbarSearch">
+                            <span class="visually-hidden">Toggle course search</span>
+                            <i class="fas fa-magnifying-glass"></i>
+                        </button>
+                        <a href="courses.html" class="btn btn-outline-light">Course Catalog</a>
+                        <a href="community.html" class="btn btn-primary">Join Community</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="navbar-search collapse" id="navbarSearch">
+            <div class="container">
+                <form class="search-form" role="search" aria-label="Search courses">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-magnifying-glass"></i></span>
+                        <input type="search" class="form-control" placeholder="Search courses, certifications, or labs" aria-label="Search query">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                    <p class="search-hint">Popular: Penetration Testing | SOC Analyst | Cloud Security</p>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 hero-text animate-on-scroll">
+                        <h1 class="hero-title">Master Cybersecurity</h1>
+                        <p class="hero-subtitle">Learn from industry experts and get hands-on experience with real-world scenarios.</p>
+                        <div class="hero-cta">
+                            <a href="courses.html" class="btn btn-primary btn-lg">Browse Courses</a>
+                            <a href="#course-paths" class="btn btn-outline-light btn-lg">View Learning Paths</a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Courses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">100+</span>
+                                <span class="stat-label">Lab Exercises</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Support</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 animate-on-scroll">
+                        <div class="hero-image">
+                            <div class="terminal-window">
+                                <div class="terminal-header">
+                                    <div class="terminal-buttons">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="terminal-body" id="typewriter"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Courses -->
+        <section class="featured-courses" id="featured">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Featured Courses</h2>
+                    <p class="section-subtitle">Start your cybersecurity journey with our most popular courses</p>
+                </div>
+                <div class="row g-4">
+                    <!-- Course cards will be dynamically loaded -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Paths -->
+        <section class="learning-paths" id="course-paths">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Learning Paths</h2>
+                    <p class="section-subtitle">Choose your career path and get structured guidance</p>
+                </div>
+                <div class="path-cards">
+                    <article class="path-card animate-on-scroll">
+                        <h3>Red Team Specialist</h3>
+                        <p>Build offensive security skills with a curated series of ethical hacking and advanced penetration testing courses.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> Ethical Hacking Foundations</li>
+                            <li><i class="fas fa-check"></i> Advanced Exploitation</li>
+                            <li><i class="fas fa-check"></i> Red Team Operations Lab</li>
+                        </ul>
+                        <a href="learning-paths.html#red-team" class="btn btn-outline-light">View Curriculum</a>
+                    </article>
+                    <article class="path-card animate-on-scroll">
+                        <h3>Blue Team Defender</h3>
+                        <p>Learn to defend modern infrastructure with intelligence-driven detection and response strategies.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> SOC Analyst Essentials</li>
+                            <li><i class="fas fa-check"></i> Threat Hunting Lab</li>
+                            <li><i class="fas fa-check"></i> Incident Response Playbooks</li>
+                        </ul>
+                        <a href="learning-paths.html#blue-team" class="btn btn-outline-light">View Curriculum</a>
+                    </article>
+                    <article class="path-card animate-on-scroll">
+                        <h3>Security Architect</h3>
+                        <p>Design resilient systems and ensure compliance with enterprise-grade security architecture practices.</p>
+                        <ul class="course-features">
+                            <li><i class="fas fa-check"></i> Cloud Security Design</li>
+                            <li><i class="fas fa-check"></i> Zero Trust Frameworks</li>
+                            <li><i class="fas fa-check"></i> Governance & Compliance</li>
+                        </ul>
+                        <a href="learning-paths.html#architect" class="btn btn-outline-light">View Curriculum</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted By -->
+        <section class="trust-logos animate-on-scroll" aria-label="Trusted by leading organizations">
+            <div class="container">
+                <div class="trust-inner">
+                    <p class="trust-title">Trusted by teams at</p>
+                    <div class="logo-strip">
+                        <span class="logo-item">CyberShield</span>
+                        <span class="logo-item">SecureWave</span>
+                        <span class="logo-item">NetDefend</span>
+                        <span class="logo-item">VulnTrack</span>
+                        <span class="logo-item">BlueOps</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4 animate-on-scroll">
+                        <div class="feature-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Hands-on Labs</h3>
+                            <p>Practice in real-world environments with our virtual labs</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 animate-on-scroll">
+                        <div class="feature-card">
+                            <i class="fas fa-certificate"></i>
+                            <h3>Certification</h3>
+                            <p>Earn industry-recognized certificates upon completion</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 animate-on-scroll">
+                        <div class="feature-card">
+                            <i class="fas fa-users"></i>
+                            <h3>Community</h3>
+                            <p>Join our community of cybersecurity professionals</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials" aria-labelledby="student-success">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 id="student-success">Student Success Stories</h2>
+                    <p class="section-subtitle">Hear how CyberEdu Pro accelerated careers in cybersecurity</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4 animate-on-scroll">
+                        <article class="testimonial-card" aria-label="Testimonial from Maya Patel">
+                            <div class="testimonial-quote">“The Red Team learning path gave me the confidence to lead pen-tests at my new job.”</div>
+                            <div class="testimonial-meta">
+                                <span class="name">Maya Patel</span>
+                                <span class="role">Offensive Security Engineer · VulnTrack</span>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4 animate-on-scroll">
+                        <article class="testimonial-card" aria-label="Testimonial from Ethan Ramirez">
+                            <div class="testimonial-quote">“Hands-on labs mirrored real incidents. I passed my CompTIA CySA+ on the first try.”</div>
+                            <div class="testimonial-meta">
+                                <span class="name">Ethan Ramirez</span>
+                                <span class="role">SOC Analyst · SecureWave</span>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4 animate-on-scroll">
+                        <article class="testimonial-card" aria-label="Testimonial from Linh Nguyen">
+                            <div class="testimonial-quote">“The mentorship sessions and curated labs made the transition to cloud security seamless.”</div>
+                            <div class="testimonial-meta">
+                                <span class="name">Linh Nguyen</span>
+                                <span class="role">Cloud Security Architect · BlueOps</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" aria-labelledby="faq-heading">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 id="faq-heading">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Get quick answers before you enroll</p>
+                </div>
+                <div class="accordion" id="faq-accordion">
+                    <div class="accordion-item animate-on-scroll">
+                        <h3 class="accordion-header" id="faq-one">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#answer-one" aria-expanded="true" aria-controls="answer-one">
+                                Do I need prior cybersecurity experience to start?
+                            </button>
+                        </h3>
+                        <div id="answer-one" class="accordion-collapse collapse show" aria-labelledby="faq-one" data-bs-parent="#faq-accordion">
+                            <div class="accordion-body">
+                                Our beginner tracks assume no prior experience. We guide you from fundamentals to advanced techniques with structured learning paths.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item animate-on-scroll">
+                        <h3 class="accordion-header" id="faq-two">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer-two" aria-expanded="false" aria-controls="answer-two">
+                                How do the hands-on labs work?
+                            </button>
+                        </h3>
+                        <div id="answer-two" class="accordion-collapse collapse" aria-labelledby="faq-two" data-bs-parent="#faq-accordion">
+                            <div class="accordion-body">
+                                Labs run in isolated cloud environments. Launch a scenario, follow guided objectives, and receive instant feedback without risking production systems.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item animate-on-scroll">
+                        <h3 class="accordion-header" id="faq-three">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer-three" aria-expanded="false" aria-controls="answer-three">
+                                Do you provide certificates upon completion?
+                            </button>
+                        </h3>
+                        <div id="answer-three" class="accordion-collapse collapse" aria-labelledby="faq-three" data-bs-parent="#faq-accordion">
+                            <div class="accordion-body">
+                                Yes. Complete the assessments to unlock verifiable certificates. We also offer exam prep resources for CompTIA, OSCP, and other industry certifications.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section animate-on-scroll">
+            <div class="container text-center">
+                <h2>Ready to Start Your Cybersecurity Career?</h2>
+                <p>Join thousands of students who have advanced their careers with CyberEdu Pro.</p>
+                <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+                    <a href="courses.html" class="btn btn-primary btn-lg">Browse the Catalog</a>
+                    <a href="signup.html" class="btn btn-outline-light btn-lg">Get Update Alerts</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3>About CyberEdu Pro</h3>
+                    <p>Professional cybersecurity training platform dedicated to providing high-quality education and practical experience.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="learning-paths.html">Learning Paths</a></li>
+                        <li><a href="labs.html">Practice Labs</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="status.html">Platform Status</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates about new courses and cybersecurity news.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CyberEdu Pro. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true" data-registration-modal>
+        <div class="modal-dialog modal-dialog-centered registration-modal__dialog">
+            <div class="modal-content registration-modal">
+                <div class="modal-header registration-modal__header border-0">
+                    <div>
+                        <span class="registration-modal__eyebrow">Program enrollment</span>
+                        <h2 class="modal-title" id="registrationModalLabel">Reserve Your Next Cyber Mission</h2>
+                        <p class="registration-modal__subtitle mb-0">Share your objectives and we'll deliver a curated roadmap, mentor pairing, and cohort invite.</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body registration-modal__body pt-0">
+                    <div class="row g-4 align-items-start registration-modal__grid">
+                        <div class="col-lg-5 registration-modal__sidebar">
+                            <div class="registration-modal__sidebar-content">
+                                <span class="badge registration-modal__badge">Early Access</span>
+                                <h3 class="registration-modal__headline">What's included</h3>
+                                <ul class="registration-modal__benefits">
+                                    <li>
+                                        <i class="fas fa-route"></i>
+                                        Tailored learning route within 24 hours
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-flask"></i>
+                                        Priority invitations to red & blue team labs
+                                    </li>
+                                    <li>
+                                        <i class="fas fa-user-shield"></i>
+                                        Weekly strategy call with a senior mentor
+                                    </li>
+                                </ul>
+                                <div class="registration-modal__assurance">
+                                    <i class="fas fa-shield-check"></i>
+                                    Your intake is reviewed by trusted CyberEdu Pro coordinators only.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 registration-modal__form">
+                            <div class="registration-modal__form-panel">
+                                <form class="needs-validation" novalidate data-registration-form>
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label for="modalFullName" class="form-label">Full name</label>
+                                            <input type="text" class="form-control" id="modalFullName" name="fullName" placeholder="Alex Ramirez" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="modalEmail" class="form-label">Work email</label>
+                                            <input type="email" class="form-control" id="modalEmail" name="email" placeholder="you@example.com" aria-describedby="modalEmailHelp" required>
+                                            <small id="modalEmailHelp" class="registration-modal__field-note">Use your professional inbox so we can keep your team in sync.</small>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="modalFocus" class="form-label">Primary focus</label>
+                                            <select class="form-select" id="modalFocus" name="focus" aria-describedby="modalFocusHelp" required>
+                                                <option value="" selected disabled>Select your focus area</option>
+                                                <option value="red-team">Red Team / Adversary Ops</option>
+                                                <option value="blue-team">Blue Team / Detection Engineering</option>
+                                                <option value="cloud-security">Cloud Security & Architecture</option>
+                                                <option value="soc-analyst">SOC Analyst / Incident Response</option>
+                                                <option value="leadership">Leadership & Program Building</option>
+                                            </select>
+                                            <small id="modalFocusHelp" class="registration-modal__field-note">We'll align your curriculum recommendations with this track.</small>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="modalGoals" class="form-label">What outcomes are you targeting?</label>
+                                            <textarea class="form-control" id="modalGoals" name="goals" rows="3" placeholder="Share the certifications, roles, or projects you're preparing for." aria-describedby="modalGoalsHelp" required></textarea>
+                                            <small id="modalGoalsHelp" class="registration-modal__field-note">The more context you share, the tighter we can tailor your roadmap and lab pairings.</small>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="yes" id="modalUpdates" name="updates" checked>
+                                                <label class="form-check-label" for="modalUpdates">Send me curated cohort and lab announcements.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-grid">
+                                            <button type="submit" class="btn btn-primary registration-modal__submit">Submit registration</button>
+                                            <small class="registration-modal__response-time">We usually respond within one business day.</small>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="alert alert-success d-none" role="alert" data-registration-success tabindex="-1">
+                                                Thanks for sharing your goals! A program coordinator will follow up shortly.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components/terminal.js"></script>
+    <script src="js/components/courses.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

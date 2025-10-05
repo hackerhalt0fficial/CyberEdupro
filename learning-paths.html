@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Paths | CyberEdu Pro</title>
+    <meta name="description" content="Choose structured cybersecurity learning paths aligned to your career goals.">
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-utility" aria-label="Global resources">
+            <div class="container">
+                <div class="utility-left">
+                    <span class="utility-item">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                        24/7 Mentor Support
+                    </span>
+                    <span class="utility-item">
+                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                        Next cohort starts Oct 15
+                    </span>
+                </div>
+                <div class="utility-right">
+                    <a class="utility-link" href="status.html">
+                        <i class="fas fa-signal" aria-hidden="true"></i>
+                        Platform Status
+                    </a>
+                    <a class="utility-link" href="help.html">
+                        <i class="fas fa-circle-question" aria-hidden="true"></i>
+                        Help Center
+                    </a>
+                    <div class="utility-social" aria-label="Community channels">
+                        <a href="#" aria-label="Join our Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="CyberEdu Pro on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="CyberEdu Pro on YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="announcement-bar" role="status">
+            <div class="container">
+                <div class="announcement-content">
+                    <span class="badge badge-live">Live</span>
+                    <p>New Offensive Security Career Accelerator now enrolling &mdash; limited seats available.</p>
+                </div>
+                <a href="learning-paths.html#red-team" class="btn btn-outline-light btn-sm">Reserve My Seat</a>
+            </div>
+        </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    CyberEdu<span class="text-primary">Pro</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="coursesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Courses
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="coursesDropdown">
+                                <li><a class="dropdown-item" href="courses/linux-fundamental.html">Linux Fundamentals</a></li>
+                                <li><a class="dropdown-item" href="courses/windows-fundamental.html">Windows Fundamentals</a></li>
+                                <li><a class="dropdown-item" href="courses/ceh.html">Certified Ethical Hacker (CEH)</a></li>
+                                <li><a class="dropdown-item" href="courses/ejpt.html">eJPT Prep</a></li>
+                                <li><a class="dropdown-item" href="courses/active-directory.html">Active Directory Security</a></li>
+                                <li><a class="dropdown-item" href="courses/ccna.html">CCNA Cyber Ops</a></li>
+                                <li><a class="dropdown-item" href="courses/cpts.html">INE CPTS</a></li>
+                                <li><a class="dropdown-item" href="courses/crto.html">CRTO Red Team Ops</a></li>
+                                <li><a class="dropdown-item" href="courses/cloud-security.html">Cloud Security</a></li>
+                                <li><a class="dropdown-item" href="courses/devops-security.html">DevOps Security</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="courses.html">Browse Catalog</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="learning-paths.html" aria-current="page">Learning Paths</a></li>
+                        <li class="nav-item"><a class="nav-link" href="labs.html">Practice Labs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="certifications.html">Certifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+                    </ul>
+                    <div class="nav-right">
+                        <button class="btn btn-icon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-expanded="false" aria-controls="navbarSearch">
+                            <span class="visually-hidden">Toggle course search</span>
+                            <i class="fas fa-magnifying-glass"></i>
+                        </button>
+                        <a href="courses.html" class="btn btn-outline-light">Course Catalog</a>
+                        <a href="community.html" class="btn btn-primary">Join Community</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="navbar-search collapse" id="navbarSearch">
+            <div class="container">
+                <form class="search-form" role="search" aria-label="Search courses">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-magnifying-glass"></i></span>
+                        <input type="search" class="form-control" placeholder="Search courses, certifications, or labs" aria-label="Search query">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                    <p class="search-hint">Popular: Penetration Testing | SOC Analyst | Cloud Security</p>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <span class="page-kicker">Guided Learning</span>
+                <h1 class="page-title">Learning Paths</h1>
+                <p class="page-description">Advance with confidence using curated journeys that combine foundational theory, immersive labs, and milestone projects aligned to modern security roles.</p>
+                <div class="page-actions">
+                    <a href="#paths" class="btn btn-primary btn-lg">Explore Paths</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg">Talk to Advisor</a>
+                </div>
+                <nav class="breadcrumbs" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span aria-hidden="true">/</span>
+                    <span aria-current="page">Learning Paths</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="page-content" id="paths">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Choose Your Focus</h2>
+                    <p>Each path blends instructor-led sessions, hands-on labs, mentorship, and assessments. Earn completion badges and verifiable certificates along the way.</p>
+                </div>
+                <div class="card-grid">
+                    <article class="info-card" id="red-team">
+                        <span class="highlight"><i class="fas fa-flag"></i> 24 weeks</span>
+                        <h3>Red Team Specialist</h3>
+                        <p>Develop adversarial tradecraft across recon, exploitation, pivoting, and reporting.</p>
+                        <ul>
+                            <li>8 deep-dive courses</li>
+                            <li>12 offensive lab scenarios</li>
+                            <li>Capstone red team engagement</li>
+                        </ul>
+                        <a href="courses/cpts.html" class="btn btn-primary">View Syllabus</a>
+                    </article>
+                    <article class="info-card" id="blue-team">
+                        <span class="highlight"><i class="fas fa-flag"></i> 20 weeks</span>
+                        <h3>Blue Team Defender</h3>
+                        <p>Hunt threats, triage incidents, and strengthen detection engineering capabilities.</p>
+                        <ul>
+                            <li>6 core defensive courses</li>
+                            <li>Live-fire incident response drills</li>
+                            <li>Threat hunting projects</li>
+                        </ul>
+                        <a href="labs.html" class="btn btn-primary">Preview Labs</a>
+                    </article>
+                    <article class="info-card" id="architect">
+                        <span class="highlight"><i class="fas fa-flag"></i> 18 weeks</span>
+                        <h3>Security Architect</h3>
+                        <p>Design and govern secure platforms that withstand advanced adversaries and compliance scrutiny.</p>
+                        <ul>
+                            <li>Cloud security frameworks</li>
+                            <li>Zero trust implementation labs</li>
+                            <li>Executive-ready architecture project</li>
+                        </ul>
+                        <a href="certifications.html" class="btn btn-primary">See Certifications</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Milestones & Credentialing</h2>
+                    <p>Track your momentum using milestone checkpoints. Each stage unlocks badges, practice exams, and mentor sessions.</p>
+                </div>
+                <div class="content-columns">
+                    <div class="content-box">
+                        <h3>Guided Milestones</h3>
+                        <ul class="course-features">
+                            <li>Kick-off and goal mapping</li>
+                            <li>Skill validation checkpoints</li>
+                            <li>Portfolio-ready project reviews</li>
+                        </ul>
+                    </div>
+                    <div class="content-box">
+                        <h3>Mentorship</h3>
+                        <ul class="course-features">
+                            <li>1:1 mentor sessions each sprint</li>
+                            <li>Office hours with SMEs</li>
+                            <li>Community study cohorts</li>
+                        </ul>
+                    </div>
+                    <div class="content-box">
+                        <h3>Credential Support</h3>
+                        <ul class="course-features">
+                            <li>Certification exam preparation</li>
+                            <li>Interview and resume coaching</li>
+                            <li>Exclusive hiring partner network</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Compare Paths</h2>
+                    <p>Identify the journey that aligns with your goals. All paths include 24/7 lab access and community support.</p>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Path</th>
+                                <th scope="col">Ideal For</th>
+                                <th scope="col">Courses</th>
+                                <th scope="col">Lab Hours</th>
+                                <th scope="col">Capstone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Red Team Specialist</td>
+                                <td>Penetration testers, exploit developers</td>
+                                <td>8</td>
+                                <td>140+</td>
+                                <td>Adversary emulation engagement</td>
+                            </tr>
+                            <tr>
+                                <td>Blue Team Defender</td>
+                                <td>SOC analysts, DFIR professionals</td>
+                                <td>6</td>
+                                <td>120+</td>
+                                <td>Incident response live-fire</td>
+                            </tr>
+                            <tr>
+                                <td>Security Architect</td>
+                                <td>Security engineers, architects</td>
+                                <td>7</td>
+                                <td>100+</td>
+                                <td>Cloud security blueprint</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h3>About CyberEdu Pro</h3>
+                    <p>Professional cybersecurity training platform dedicated to providing high-quality education and practical experience.</p>
+                </div>
+                <div class="col-lg-2">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="learning-paths.html">Learning Paths</a></li>
+                        <li><a href="labs.html">Practice Labs</a></li>
+                        <li><a href="certifications.html">Certifications</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="help.html">Help Center</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="status.html">Platform Status</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates about new courses and cybersecurity news.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CyberEdu Pro. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
